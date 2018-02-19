@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.mrdiaz.apptiempo.model.weather.WeatherInfo;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

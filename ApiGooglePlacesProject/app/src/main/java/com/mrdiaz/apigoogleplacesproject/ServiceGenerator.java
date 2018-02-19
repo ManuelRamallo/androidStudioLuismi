@@ -1,4 +1,4 @@
-package com.mrdiaz.apptiempo;
+package com.mrdiaz.apigoogleplacesproject;
 
 import java.io.IOException;
 
@@ -12,12 +12,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by mrdiaz on 14/02/2018.
+ * Created by mrdiaz on 19/02/2018.
  */
 
 public class ServiceGenerator {
-
-    private static final String BASE_URL = "https://api.openweathermap.org/";
+    private static final String BASE_URL = "https://maps.googleapis.com/";
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
@@ -36,29 +35,6 @@ public class ServiceGenerator {
             new OkHttpClient.Builder();
 
 
-    /*Interceptor googlePlaceInterceptor = new Interceptor() {
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-
-            Request original = chain.request();
-            HttpUrl originalHttpUrl = original.url();
-
-            HttpUrl url = originalHttpUrl.newBuilder()
-                    .addQueryParameter("key", "AIzaSyDjpqKUMLVPGvqVUhjiCq2LTPz1rTvEeFw")
-                    .build();
-
-            // Request customization: add request headers
-            Request.Builder requestBuilder = original.newBuilder()
-                    .url(url);
-
-            Request request = requestBuilder.build();
-            return chain.proceed(request);
-
-
-        }
-    };*/
-
-
     public static <S> S createService(
             Class<S> serviceClass) {
 
@@ -71,9 +47,10 @@ public class ServiceGenerator {
                     HttpUrl originalHttpUrl = original.url();
 
                     HttpUrl url = originalHttpUrl.newBuilder()
-                            .addQueryParameter("APPID", "76bbda59052636881e21fb70f0eacf35")
-                            .addQueryParameter("units", "motric")
-                            .addQueryParameter("lang", "es")
+                            .addEncodedPathSegment("maps/api/place/")
+                            .addQueryParameter("APPID", "AIzaSyAGiV5iCpXA_vzE8SFUQpscOntyeRiT4Mw")
+                            .addQueryParameter("language", "es")
+                            .addQueryParameter("type", "(cities)")
                             .build();
 
                     // Request customization: add request headers
@@ -93,7 +70,5 @@ public class ServiceGenerator {
 
         return retrofit.create(serviceClass);
     }
-
-
 
 }

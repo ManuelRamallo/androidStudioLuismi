@@ -1,5 +1,5 @@
 
-package com.mrdiaz.apptiempo;
+package com.mrdiaz.apptiempo.model.weather;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

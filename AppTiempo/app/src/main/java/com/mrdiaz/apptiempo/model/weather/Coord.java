@@ -1,5 +1,5 @@
 
-package com.mrdiaz.apptiempo;
+package com.mrdiaz.apptiempo.model.weather;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
