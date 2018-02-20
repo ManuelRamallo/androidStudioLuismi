@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 
 public interface GooglePlacesApi {
 
-    @GET("/autocomplete/json")
+    @GET("/maps/api/place/autocomplete/json")
     Call<PrediccionResult> autoComplete(@Query("input") String text);
 
 }

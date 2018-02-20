@@ -47,8 +47,8 @@ public class ServiceGenerator {
                     HttpUrl originalHttpUrl = original.url();
 
                     HttpUrl url = originalHttpUrl.newBuilder()
-                            .addEncodedPathSegment("maps/api/place/")
-                            .addQueryParameter("APPID", "AIzaSyAGiV5iCpXA_vzE8SFUQpscOntyeRiT4Mw")
+                            //.addEncodedPathSegment("maps/api/place/")
+                            .addQueryParameter("key", "AIzaSyBkKNJMUqlglTarKoBYcOgbCPnN47hYNlI")
                             .addQueryParameter("language", "es")
                             .addQueryParameter("type", "(cities)")
                             .build();

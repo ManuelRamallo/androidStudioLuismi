@@ -10,7 +10,8 @@
     tools:context="com.mrdiaz.apigoogleplacesproject.MainActivity">
 
 
-    <AutoCompleteTextView
+
+    <com.mrdiaz.apigoogleplacesproject.DelayAutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

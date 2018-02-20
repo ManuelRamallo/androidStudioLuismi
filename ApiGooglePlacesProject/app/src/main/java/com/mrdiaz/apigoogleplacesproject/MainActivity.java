@@ -10,11 +10,7 @@ import com.mrdiaz.apigoogleplacesproject.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    private static final String[] COUNTRIES = new String[] {
-            "Belgium", "France", "Italy", "Germany", "Spain", "Argentina", "Argelia"
-    };
-
-    AutoCompleteTextView autoCompleteTextView;
+    DelayAutoCompleteTextView autoCompleteTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
 
+        autoCompleteTextView.setAdapter(new CityAutoCompleteAdapter(MainActivity.this));
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, COUNTRIES);
-
-        autoCompleteTextView.setAdapter(adapter);
 
     }
 }
